@@ -85,3 +85,4 @@ https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quick
 * Группы безопасности
 * Бекап образов виртуальных машин
 
+![image](https://github.com/user-attachments/assets/e4d3cb64-a865-4d92-b5d8-d23d83d9d186)
