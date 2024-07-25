@@ -79,7 +79,7 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quickstart?utm_referrer=https%3A%2F%2Fgithub.com%2Fnetology-code%2Fsys-diplom%2Ftree%2Fdiplom-zabbix%3Ftab%3Dreadme-ov-file
 
 При помощи манифеста Terraform main.tf были созданы и настроены:
-•	Сеть и подсети
+* Сеть и подсети
 •	Виртуальные машины
 •	Балансировщик
 •	Группы безопасности
