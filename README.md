@@ -90,13 +90,75 @@ https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quick
 ![image](https://github.com/user-attachments/assets/88c9711f-a0c7-4a3f-8310-4847c494ae0a)
 
 
-![image](https://github.com/user-attachments/assets/c0cdaaef-76d0-4c10-82c4-517ed641bd36)
+Все в соответствии с заданием, созданные объекты в файле main.tf находятся в том же порядке, как и в списке. Настройка облачной инфраструктуры так же производится полностью автоматически в соответствии со скриптом.
+Скрипты создания ВМ ссылаются на файл meta.txt, который главным образом содержит публичную половину ssh ключа.
+Файл variables.tf содержит ID облака и каталога, где производится развертка инфраструктуры.
 
-![image](https://github.com/user-attachments/assets/47e536b6-7367-49b1-80ad-a21266941e53)
+### Установка софта при помощи Ansible
 
-![image](https://github.com/user-attachments/assets/cd0d7938-3820-451f-8a66-006bdfbfdb0d)
+На bastion-host установлен Ansible, подключены хосты и написаны плейбуки для установки и настройки необходимого софта. Почти все настройки происходят автоматически при запуске плейбуков. Для обеспечения доступа bastion-host ко всем остальным хостам инфраструктуры на него необходимо скопировать ssh ключ при помощи scp id_ed25519 в директорию ~/.ssh
+Также ключ скопирован на все остальные ВМ для корректной работы софта.
+Файл hosts.txt содержит хосты по их fqdn имени и логин и ссылку на ключ для подключения по ssh.
+Проверка: ansible -i hosts.txt all -m ping
+Файлы *_pb.yaml это запускаемые плейбуки, которые устанавливают и конфигурируют софт в соответствии с заданием. Некоторые из них ссылаются на роли, лежащие в папке roles, которые из них копируют заранее заготовленные конфиги из папки files на машины в необходимые расположения.
 
-![image](https://github.com/user-attachments/assets/3dc0e0e7-e97c-426a-84c7-54d7944eca46)
+![image](https://github.com/user-attachments/assets/5bf29ff9-b4ea-45fd-900a-e231daafc590)
+
+![image](https://github.com/user-attachments/assets/5cb5ba2c-9eeb-428b-908d-8e5c0d4f28d6)
+
+![image](https://github.com/user-attachments/assets/10adede9-d5e1-46a0-9b97-982f6afaaf5c)
+
+![image](https://github.com/user-attachments/assets/6aa7161f-7b65-4d93-a9ac-45a4db2b20c4)
+
+![image](https://github.com/user-attachments/assets/3e9bd7bf-940a-4fea-8470-830b56386b94)
+
+![image](https://github.com/user-attachments/assets/0e687452-60cd-447d-b480-a7edb65e1839)
+
+![image](https://github.com/user-attachments/assets/9616360c-332d-4551-847f-039d5d333a06)
+
+Таким образом вся инфраструктура почти полностью развернута в соответствии с заданием автоматически при помощи манифеста Terraform и плейбуков Ansible. Для того, чтобы сервера nginx начали посылать логи filebeat на машинах web1 и web2 необходимо дать команды:
+* sudo filebeat setup
+* sudo service filebeat start
+
+![image](https://github.com/user-attachments/assets/62f73573-dfc1-4071-80e8-2e294c3ff638)
+
+После подключения хостов Zabbix для того, чтобы они отобрализись как доступные на всех подключаемых машинах дается команда:
+zabbix_agentd -V
+Настройка дешборда и сбора метрик производится в GUI в браузере. (не получилось только настроить сбор метрик http-запросов, но думаю не критично)
+
+![image](https://github.com/user-attachments/assets/3577307a-06a0-4357-9e3c-711d789b663f)
+
+Веб сервера доступны по адресу балансировщика:
+62.84.112.212
+
+Kibana доступна по публичному адресу по порту :5601
+Zabbix доступен по публичному адресу по порту :8080 лог пасс Admin netology (Admin именно с большой буквы).
+
+
+![image](https://github.com/user-attachments/assets/39f6c291-b98b-4898-9107-b2052b3491b1)
+
+![image](https://github.com/user-attachments/assets/e65588b9-046a-4003-9a21-3e52ecee70eb)
+
+![image](https://github.com/user-attachments/assets/793f6b6a-267d-4101-a284-d8bc5989b38f)
+
+![image](https://github.com/user-attachments/assets/96aba7d4-8862-42e6-a7d7-8683fe215257)
+
+![image](https://github.com/user-attachments/assets/02314a07-c992-48ca-a9cf-dedb84a5d324)
+
+![image](https://github.com/user-attachments/assets/ee3c630c-aa1b-439e-bf2f-38fa7e1f3153)
+
+
+
+
+
+
+  
+
+
+
+
+
+
 
 
 
