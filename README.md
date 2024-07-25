@@ -89,7 +89,6 @@ https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quick
 
 ![image](https://github.com/user-attachments/assets/88c9711f-a0c7-4a3f-8310-4847c494ae0a)
 
-![image](https://github.com/user-attachments/assets/855405e7-7ca2-4adf-a72b-d4f4d0edec0a)
 
 ![image](https://github.com/user-attachments/assets/c0cdaaef-76d0-4c10-82c4-517ed641bd36)
 
