@@ -86,3 +86,23 @@ https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quick
 * Бекап образов виртуальных машин
 
 ![image](https://github.com/user-attachments/assets/e4d3cb64-a865-4d92-b5d8-d23d83d9d186)
+
+![image](https://github.com/user-attachments/assets/88c9711f-a0c7-4a3f-8310-4847c494ae0a)
+
+![image](https://github.com/user-attachments/assets/855405e7-7ca2-4adf-a72b-d4f4d0edec0a)
+
+![image](https://github.com/user-attachments/assets/c0cdaaef-76d0-4c10-82c4-517ed641bd36)
+
+![image](https://github.com/user-attachments/assets/47e536b6-7367-49b1-80ad-a21266941e53)
+
+![image](https://github.com/user-attachments/assets/cd0d7938-3820-451f-8a66-006bdfbfdb0d)
+
+![image](https://github.com/user-attachments/assets/3dc0e0e7-e97c-426a-84c7-54d7944eca46)
+
+
+
+
+
+
+
+
