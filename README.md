@@ -74,4 +74,14 @@ Cоздайте ВМ, разверните на ней Elasticsearch. Устан
 
 # Моё решение 
 
+### Создание облачной инфраструктуры при помощи Terraform
+Установка и подключение Terraform производилось по официальной инструкции на которое ссылается задание
+https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-quickstart?utm_referrer=https%3A%2F%2Fgithub.com%2Fnetology-code%2Fsys-diplom%2Ftree%2Fdiplom-zabbix%3Ftab%3Dreadme-ov-file
+
+При помощи манифеста Terraform main.tf были созданы и настроены:
+•	Сеть и подсети
+•	Виртуальные машины
+•	Балансировщик
+•	Группы безопасности
+•	Бекап образов виртуальных машин
 
